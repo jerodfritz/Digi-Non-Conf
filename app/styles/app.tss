@@ -1,0 +1,101 @@
+Window: {
+	navBarHidden:true,
+	backgroundImage:'/img/general/bg-interior.png'
+},
+
+TextField: {
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+    autocorrect: false,
+    top:'4dp',
+    left:'4dp',
+    bottom:'4dp',
+    right:'4dp'
+},
+
+TextArea: {
+	autocapitalization: Ti.UI.TEXT_AUTOCAPITALIZATION_NONE,
+    borderStyle:Ti.UI.INPUT_BORDERSTYLE_NONE,
+    autocorrect: false
+},
+
+'TextField[platform=android]': {
+	backgroundImage:'/img/blank.png'
+},
+
+'TextArea[platform=android]': {
+	backgroundImage:'/img/blank.png'
+},
+
+'.tfWrapper': {
+	width:'250dp',
+	height:'47dp',
+	backgroundImage:'/img/general/form-bg.png'
+},
+
+Label: {
+	color:'#000',
+	height:Ti.UI.SIZE,
+	width:Ti.UI.SIZE
+},
+
+TableView: {
+	width: Ti.UI.FILL,
+	height: Ti.UI.FILL,
+	showVerticalScrollIndicator: true,
+	separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.SINGLE_LINE,
+	backgroundColor:'transparent'
+},
+
+'.blueHeader': {
+	color:'#0574bf',
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'18dp'
+	}
+},
+
+'.appContent': {
+	backgroundColor:'#ffffff'
+},
+
+'.fauxShadow': {
+  bottom:0,
+  height:'1dp',
+  backgroundColor:'#9a9a9a'
+},
+
+'.hr': {
+  width:Ti.UI.FILL,
+  height:'4dp',
+  backgroundImage:'/img/general/divider-line-inset.png'
+},
+
+'.childArrow': {
+	image:'/img/general/btn-right-arrow.png',
+	right:'5dp'
+},
+
+'.label': {
+  top: '3dp',
+  bottom: '4dp',
+  color:'#fff',
+  minimumFontSize: '13dp',
+  font: {
+    fontSize: '13dp',
+    fontWeight:'normal'
+  }
+},
+'starRow': {
+  focusable:false,
+  selectionStyle : 'no'
+}
+
+
+
+
+
+
+
+
+

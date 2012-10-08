@@ -1,0 +1,101 @@
+'#container': {
+	backgroundImage:'/img/header/bg-title.png',
+	height:'50dp',
+	top:'0dp'
+},
+
+'#logo': {
+	image:'/img/general/dnc-bar-logo.png',
+  width:'129dp',
+  height:'35dp',
+  top: '3dp'
+},
+
+'#logo[formFactor=tablet]': {
+	left:'10dp'
+},
+
+'#underline': {
+	//backgroundColor:'#0574bf',
+	bottom:0,
+	height:'2dp'
+},
+
+'#refresh': {
+	right:'7dp',
+	top:'-5dp',
+	width:'50dp',
+	enabled:false,
+	visible:false
+},
+
+'#refreshImage': {
+	right:0,
+	width:'29dp',
+	height:'29dp',
+	image:'/img/general/btn-refresh.png',
+},
+
+
+'#back': {
+  left:'7dp',
+  top:'-5dp',
+  width:'50dp',
+  enabled:false,
+  visible:false
+},
+
+'#backImage': {
+  left:0,
+  width:'29dp',
+  height:'29dp',
+  image:'/img/general/btn-back.png',
+},
+
+
+
+
+'#nav': {
+	left:'95dp',
+	layout:'horizontal',
+	width:'300dp'
+},
+
+'#navIndicator': {
+	backgroundImage:'/img/header/nav-ind.png',
+	bottom:'2dp',
+	left:'120dp',
+	height:'4dp',
+	width:'8dp'
+},
+
+'.navBtn': {
+	top:'2dp',
+	height:'40dp',
+	width:'60dp'
+},
+
+
+'#agendaIcon': {
+	image:'/img/header/btn-tablet-agenda-default.png'
+},
+
+'#streamIcon': {
+	image:'/img/header/btn-tablet-activity-stream-default.png'
+},
+
+'#favoritesIcon': {
+  image:'/img/header/btn-tablet-favorites-default.png'
+},
+
+'#aboutIcon': {
+	image:'/img/header/btn-tablet-about-default.png'
+},
+
+
+'#rightControls': {
+	layout:'horizontal',
+	right:'15dp',
+	width:Ti.UI.SIZE
+}
+

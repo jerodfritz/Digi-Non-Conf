@@ -1,0 +1,26 @@
+<Alloy>
+	<View id="index">
+	  <ScrollView id="scroller" scrollType="vertical" layout="vertical">
+      <View id="speakerTopView">
+        <ImageView id="iconImage"/>
+        <View id="meta">
+          <Label id="name"/>
+          <Label id="title"/>
+        </View>
+      </View>
+      
+      <View class="buffer" />
+      
+      <View class="hr" />
+      <Label id="biographyLabel" textid="biographyLabel" class="label"/>
+      <View class="hr" />
+      <Label id="biography"/>
+      
+      <View class="hr" />
+      <Label id="tweetsLabel" textid="tweetsLabel" class="label"/>
+      <View class="hr" />
+      <View id="tweets" />
+      
+    </ScrollView>	  
+	</View>
+</Alloy>

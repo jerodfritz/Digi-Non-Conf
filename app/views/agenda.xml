@@ -1,0 +1,9 @@
+<Alloy>
+	<View id="index">
+		<View class="container">
+			<View id="daySelectorContainer" class="headerView" formFactor="handheld"/>
+			<View id="filtersContainer" class="headerView" formFactor="handheld"/>
+			<TableView id="agendaTable" formFactor="handheld"/>
+		</View>
+	</View>
+</Alloy>

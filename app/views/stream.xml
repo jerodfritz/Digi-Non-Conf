@@ -1,0 +1,7 @@
+<Alloy>
+	<View id="index">
+		<ScrollView >
+		  <View id="tweets" />
+		</ScrollView>
+  </View>
+</Alloy>

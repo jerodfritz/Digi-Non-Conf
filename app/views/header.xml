@@ -1,0 +1,32 @@
+<Alloy>
+	<View id="container">	
+		<ImageView id="logo"/>
+		
+		<View id="refresh" formFactor="handheld">
+			<ImageView id="refreshImage"/>
+		</View>
+		
+		<View id="back" formFactor="handheld">
+      <ImageView id="backImage"/>
+    </View>
+		<!-- Tablet only nav structure -->
+		<View id="nav" formFactor="tablet">
+			<View id="agenda" class="navBtn">
+				<ImageView id="agendaIcon"/>
+			</View>
+			<View id="stream" class="navBtn">
+				<ImageView id="streamIcon"/>
+			</View>
+			<View id="favorites" class="navBtn">
+        <ImageView id="favoritesIcon"/>
+      </View>
+      <View id="about" class="navBtn">
+				<ImageView id="aboutIcon"/>
+			</View>
+		</View>
+		<View id="navIndicator" formFactor="tablet"/>
+		
+		
+		<View id="underline"/>
+	</View>
+</Alloy>

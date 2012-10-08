@@ -1,0 +1,8 @@
+<Alloy>
+	<View id="container">
+		<View id="content">
+		</View>
+		<Require id="header" src="header"/>
+		<Require id="tabs" formFactor="handheld" src="tabs"/>
+	</View>
+</Alloy>

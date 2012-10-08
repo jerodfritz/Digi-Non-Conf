@@ -1,0 +1,80 @@
+'#index': {
+	layout:'vertical'
+},
+
+'#sessionTopView': {
+  top:'20dp',
+  left:'15dp',
+  right:'15dp',
+  height: '80dp',
+  layout:'absolute'
+},
+
+'#iconImage': {
+  height: '60dp',
+  width: '60dp',
+  left: '10dp'
+},
+'#meta': {
+  top:'4dp',
+  bottom:'4dp',
+  left:'80dp',
+  right:'10dp',
+  //layout:'vertical'
+},
+'#title': {
+	left : 0,
+	//top : 0,
+	color:'#000',
+	font: {
+		fontSize:'15dp',
+		//fontWeight:'bold',
+		fontFamily:'Arial-BoldItalicMT',
+	}
+},
+'#descriptionShort': {
+  left : 0,
+  //top:'5dp',
+  color:'#000',
+  font: {
+    fontSize:'11dp',
+    fontWeight:'bold',
+  }
+},
+
+'#descriptionScroller': {
+  height: '70dp',
+  left:'15dp',
+  right:'15dp',
+},
+
+'#descriptionFull': {
+  color:'#fff',
+  top:'8dp',
+  bottom:'8dp',
+  left:'15dp',
+  right:'15dp',
+  textAlign : 'left',
+  font: {
+    fontSize:'11dp',
+    fontWeight:'normal',
+  }
+},
+'.buffer': {
+  bottom:0,
+  height:'20dp',
+},
+
+'.detailsTable': {
+  footertitle:''
+},
+
+'#speakersView': {
+  backgroundColor: '#ff0000',
+  height: Ti.UI.SIZE,
+  layout: 'vertical'
+},
+
+'#timePlaceTable': {
+  height : '65dp'
+},

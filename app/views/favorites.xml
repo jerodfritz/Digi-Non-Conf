@@ -1,0 +1,9 @@
+<Alloy>
+  <View id="index">
+    <View class="container">
+      <View id="daySelectorContainer" class="headerView" />
+      <View id="filtersContainer" class="headerView" />
+      <TableView id="agendaTable" />
+    </View>
+  </View>
+</Alloy>

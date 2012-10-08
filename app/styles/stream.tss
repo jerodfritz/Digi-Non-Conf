@@ -1,0 +1,25 @@
+'#header': {
+	top:'10dp',
+	left:'10dp',
+	right:'10dp',
+	height:'35dp'
+},
+
+'#headerLabel': {
+	color:'#373e47',
+	left:'5dp',
+	width:Ti.UI.SIZE,
+	height:Ti.UI.SIZE,
+	font: {
+		fontFamily:'Quicksand-Bold',
+		fontSize:'14dp'
+	}
+},
+
+'#table': {
+	top:'50dp',
+	left:'10dp',
+	bottom:'10dp',
+	right:'10dp',
+	separatorStyle: Ti.UI.iPhone.TableViewSeparatorStyle.NONE
+}

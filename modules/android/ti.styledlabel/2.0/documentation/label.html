@@ -1,0 +1,67 @@
+<h1>Ti.StyledLabel.Label</h1>
+<h2>Description</h2>
+<p>Displays html and css.</p>
+<h2>Functions</h2>
+<h2>Properties</h2>
+<h3>filteredTags</h3>
+<p>Controls which tags are included or excluded from your output, based on what you specify as the
+"filteredTagsMode".</p>
+<h3>filteredTagsMode</h3>
+<p>Controls if the tags specified in "filteredTags" are the only HTML tags allowed, or if they are the only
+tags that are excluded.</p>
+<p>Set this property to one of the two constants:</p>
+<ul>
+<li>Ti.StyledLabel.INCLUDE_SPECIFIED_TAGS_ONLY</li>
+<li>Ti.StyledLabel.EXCLUDE_SPECIFIED_TAGS</li>
+</ul>
+<h3>html</h3>
+<p>Specifies the HTML that should be loaded in to the label. Note that this HTML will NOT simply
+run in a web view! Therefore, you can only use a subset of HTML and CSS -- no JavaScript!</p>
+<p>The following HTML conventions are supported:</p>
+<ul>
+<li>img (both remote and local -- remote images will be lazy loaded as they are viewed)</li>
+<li>blockquote</li>
+<li>tt, pre, code</li>
+<li>a (use the "click" events to handle what happens when the user touches a link)</li>
+<li>b and strong</li>
+<li>i, em, cite, and dfn</li>
+<li>ul, ol, and li</li>
+<li>del and strike</li>
+<li>u</li>
+<li>sup and sub</li>
+<li>h1-6</li>
+<li>big</li>
+<li>small</li>
+<li>font (with size, face, and/or color attributes)</li>
+<li>p and br</li>
+</ul>
+<p>You also have a couple of options for styling these elements:</p>
+<ul>
+<li>inline CSS</li>
+<li>style tags with simple CSS selectors</li>
+</ul>
+<p>The following CSS selectors are supported:</p>
+<ul>
+<li>id based (#rule)</li>
+<li>class based (.red, .green)</li>
+<li>tag based (span, div, p)</li>
+</ul>
+<p>Note that you cannot chain selectors in a single rule (like "div .red"), but you can
+combine them (like ".red, .blue { }).</p>
+<p>Also note that you do not have access to the full CSS specification. The following properties
+are supported:</p>
+<ul>
+<li>color</li>
+<li>background-color</li>
+<li>font-weight</li>
+<li>font-size</li>
+<li>text-indent</li>
+<li>text-size</li>
+<li>text-align</li>
+</ul>
+<h2>Events</h2>
+<h3>click</h3>
+<p>Occurs when a link is touched. Receives a dictionary with the following properties:</p>
+<ul>
+<li>string url: The URL of the link the user touched.</li>
+</ul>

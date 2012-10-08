@@ -1,0 +1,6 @@
+'#clouds': {
+	height:'1024dp',
+	width:'1024dp',
+	bottom:0,
+	image:'/img/general/bg-clouds-tablet.png'
+}

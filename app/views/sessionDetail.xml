@@ -1,0 +1,35 @@
+<Alloy>
+	<View id="index">
+	  <ScrollView id="scroller" scrollType="vertical" layout="vertical">
+      <View id="sessionTopView">
+        <ImageView id="iconImage"/>
+        <View id="meta">
+          <Label id="title"/>
+          <Label id="descriptionShort"/>
+        </View>
+      </View>
+      
+      <View class="buffer" />
+      
+      <View class="hr" />
+      <Label id="timePlaceLabel" textid="timePlaceLabel" class="label"/>
+      <View class="hr" />
+      <TableView id="timePlaceTable" class="detailsTable" formFactor="handheld"/>
+      
+      
+      <View class="hr" />
+      <Label id="descriptionLabel" textid="descriptionLabel" class="label"/>
+      <View class="hr" />
+      <Label id="descriptionFull"/>
+      
+      
+      <View class="hr" />
+      <Label id="speakersLabel" textid="speakersLabel" class="label"/>
+      <View class="hr" />
+      <View id="speakersView" formFactor="handheld"/>
+      <View class="buffer" />
+      
+      
+    </ScrollView>	  
+	</View>
+</Alloy>

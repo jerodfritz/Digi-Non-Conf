@@ -1,0 +1,16 @@
+<Alloy>
+	<View id="root" class="container">
+      <View id="agenda" class="navBtn">
+        <ImageView id="agendaIcon"/>
+      </View>
+      <View id="stream" class="navBtn">
+        <ImageView id="streamIcon"/>
+      </View>
+      <View id="favorites" class="navBtn">
+        <ImageView id="favoritesIcon"/>
+      </View>
+      <View id="about" class="navBtn">
+        <ImageView id="aboutIcon"/>
+      </View>		
+	</View>
+</Alloy>
