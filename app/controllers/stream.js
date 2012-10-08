@@ -1,3 +1,5 @@
+Ti.App.fireEvent('analytics:trackPageview', {url: ' Alerts / Home'}); 
+
 var ui = require('ui');
 var tweets = require('tweets');
 

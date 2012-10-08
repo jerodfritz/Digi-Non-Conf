@@ -5,7 +5,7 @@ var speaker = arguments[0];
 var photo = speaker.photo ? speaker.photo : '/img/profile/no-profile-pic.png';
 var name = speaker.field_first_name.und[0].value + ' ' + speaker.field_last_name.und[0].value;
 
-Ti.App.fireEvent('analytics:trackPageview', {url: 'Participant / ' + name}); 
+Ti.App.fireEvent('analytics:trackPageview', {url: ' Participant / ' + name}); 
 
 $.speakerTopView.backgroundColor = speaker.color;
 $.name.text = name;
@@ -28,7 +28,13 @@ if (twitter) {
   tweets.getTweets(twitter, function(e) {
     if (e.success) {
       $.tweets.add(e.tweets);
-      $.tweets.height = e.tweets.height;
+      if(e.tweets.height && e.tweets.height!=0 && e.tweets.height<2000){
+        $.tweets.height = e.tweets.height;
+        Ti.API.info("Tweet Height = " + e.tweets.height); 
+      } else {
+        Ti.API.info("Forcing Tweet Height");
+        $.tweets.height = '2000dp';
+      }
     } else {
       ui.alert('networkGenericErrorTitle', 'tweetsNetworkError');
     }

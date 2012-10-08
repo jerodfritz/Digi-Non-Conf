@@ -4,6 +4,9 @@
       <View id="daySelectorContainer" class="headerView" />
       <View id="filtersContainer" class="headerView" />
       <TableView id="agendaTable" />
+      <View id="helpOverlay">
+          <Label textid="favoritesHelp" id="favoritesHelp" />
+      </View>
     </View>
   </View>
 </Alloy>

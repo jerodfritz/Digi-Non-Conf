@@ -1,5 +1,24 @@
 <Alloy>
-	<View class="container">
-	  <Label>About</Label>
-	</View>
+  <View id="container">
+    <ImageView id="madeWith"/>
+    <View id="divider"/>
+    <View id="content" class="appContent">
+      <View id="innerContent">
+        <ScrollView id="scroller" scrollType="vertical" layout="vertical">
+          <View id="imgContainer"><ImageView id="centogram"/></View>
+          <Label textid="development" class="paragraph"/>
+          
+          <View id="imgContainer"><ImageView id="mikezitt"/></View>
+          <Label textid="design" class="paragraph"/>
+          
+          <View id="imgContainer"><ImageView id="appcelerator"/></View>
+          <Label textid="technologyApp" class="paragraph"/>
+          
+          <View id="imgContainer"><ImageView id="drupal"/></View>
+          <Label textid="technologyBack" class="paragraph"/>
+                    
+        </ScrollView>
+      </View>
+    </View>
+  </View>
 </Alloy>

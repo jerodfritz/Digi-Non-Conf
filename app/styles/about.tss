@@ -1,3 +1,98 @@
-".container": {
-	backgroundColor: "white"
+'#container': {
+  backgroundImage:'/img/general/bg-interior.png'
+},
+
+'#scroller': {
+  backgroundColor: '#eee',
+},
+
+'#madeWith': {
+  top:'10dp',
+  image:'/img/about/about-app-love.png',
+  height:'13dp',
+  width:'174dp'
+},
+
+'#divider': {
+  top:'35dp',
+  width:Ti.UI.FILL,
+  height:'4dp',
+  backgroundImage:'/img/about/divider-line-inset.png'
+},
+
+'#content': {
+  top:'50dp',
+  left:'10dp',
+  right:'10dp',
+  bottom:'10dp'
+},
+
+'#imgContainer': {
+  top:'10dp',
+  bottom:'15dp',
+  height:Ti.UI.SIZE
+},
+
+'#centogram': {
+  image:'/img/about/about-centogram-logo.png',
+  height:'32dp',
+  width:'158dp'
+},
+
+'#drupal': {
+  image:'/img/about/about-drupal-logo.png',
+  height:'32dp',
+  width:'158dp'
+},
+
+'#mikezitt': {
+  image:'/img/about/about-mikezitt-logo.png',
+  height:'32dp',
+  width:'158dp'
+},
+
+'#appcelerator': {
+  image:'/img/about/about-appc-logo.png',
+  height:'32dp',
+  width:'158dp'
+},
+
+'.paragraph': {
+  top:'5dp',
+  left:'10dp',
+  right:'10dp',
+  bottom:'5dp',
+  color:'#000',
+  textAlign:'left',
+  font: {
+    fontSize:'13dp'
+  }
+},
+
+'#aboutHeader': {
+  top:'10dp',
+  color:'#fff',
+  textAlign:'center',
+  font: {
+    fontWeight:'bold',
+    fontFamily:'Quicksand-Bold',
+    fontSize:'11dp'
+  }
+},
+
+
+
+'.header': {
+  top:'15dp',
+  left:'10dp',
+  right:'10dp',
+  color:'#000',
+  textAlign:'left',
+  font: {
+    fontWeight:'bold',
+    fontFamily:'Quicksand-Bold',
+    fontSize:'18dp'
+  }
 }
+
+

@@ -12,7 +12,7 @@ $.descriptionFull.text = session.desc_full.value;
 ui.shadow($.descriptionLabel);
 ui.shadow($.timePlaceLabel);
 
-Ti.App.fireEvent('analytics:trackPageview', {url: 'Session / ' + session.node_title});  
+Ti.App.fireEvent('analytics:trackPageview', {url: ' Session / ' + session.node_title});  
 
 var timePlace = ui.StarContainer({
     nid : session.nid,
@@ -28,7 +28,10 @@ var timePlace = ui.StarContainer({
     showStar : false
   });
 timePlace.addEventListener('click',function(){
-  alert('show location here')
+  Ti.App.fireEvent('app:open.drawer', {
+    controller: 'mapView',
+    contextData: session.loc
+  });
 })
 $.timePlaceTable.add(timePlace);
 
@@ -39,19 +42,7 @@ for(var i=0;i<speakers.length;i++){
   var speaker = speakers[i];
   speaker.color = session.color;
   var speakerView = ui.SpeakerContainer(speaker);
-  
-  speakerView.addEventListener('click',function(e){
-    Ti.App.fireEvent('app:open.drawer', {
-      controller: 'speakerDetail',
-      contextData: speaker
-    });
-  });
-  
-  Ti.API.debug(speaker.title);
-  Ti.API.debug(speakerView);
-  
   $.speakersView.add(speakerView);
-
 }  
 
 /*speakers.push(new ui.AgendaRow(session));

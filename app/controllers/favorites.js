@@ -1,5 +1,5 @@
 $.on('focus',function(){
-  Ti.App.fireEvent('analytics:trackPageview', {url: 'Favorites / Home'});  
+  Ti.App.fireEvent('analytics:trackPageview', {url: ' Favorites / Home'});  
 });
 
 var moment = require('moment'),
@@ -66,14 +66,21 @@ function loadData(forceRemoteRefresh) {
       ui.alert('networkGenericErrorTitle', 'agendaNetworkError');
     }
   },forceRemoteRefresh);
+  if(day1all.length == 0 && day2all.length == 0){
+    $.helpOverlay.visible = true;
+  } else {
+    $.helpOverlay.visible = false;
+  }
 }
+
+ui.shadow($.favoritesHelp);
 
 // Load Initial Data
 $.on('focus',function(){
   loadData(false);  
 })
 Ti.App.addEventListener('favorites:change', function(e) {
-  loadData(false);
+  //loadData(false);
 });
 
 

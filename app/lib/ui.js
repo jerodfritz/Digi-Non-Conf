@@ -310,7 +310,6 @@ function AgendaRow(session) {
 
   var location = JSON.parse(session.location);
   var loc = location[0];
-  
  
   var rowClick = function(){
     if(openDetails){
@@ -428,7 +427,8 @@ function StarContainer(options){
       iconGraphic.addEventListener('click',function(e){
         if(_starCallback){
           _starCallback(e);
-        }    
+        } 
+        container.fireEvent('starToggle');   
       })
     }
     container.add(iconGraphic);
@@ -542,6 +542,12 @@ function SpeakerContainer(speaker){
     nid : nid,
   })
   container.add(hasChildArrow);
+  container.addEventListener('click',function(e){
+    Ti.App.fireEvent('app:open.drawer', {
+      controller: 'speakerDetail',
+      contextData: speaker
+    });  
+  })
   
   container.speaker = speaker;
   return container;

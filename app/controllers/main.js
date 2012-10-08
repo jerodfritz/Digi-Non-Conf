@@ -24,9 +24,15 @@ Ti.App.addEventListener('analytics:trackPageview', function(e) {
   analytics.trackPageview(e.url);
 });
 
+var TiMiniBrowser = require("MiniBrowser/TiMiniBrowser");
 Ti.App.addEventListener('tweets:click', function(evt){
-  analytics.trackEvent('Tweet','Click', evt.url);
-  Ti.Platform.openURL(evt.url);
+  analytics.trackEvent('Tweet','Click', evt.url,'');
+  var browser = new TiMiniBrowser({
+    url: evt.url,
+    barColor: "#3075af",
+    modal: true
+  });
+  browser.open();
 })
 
 //Listen for new drawer events

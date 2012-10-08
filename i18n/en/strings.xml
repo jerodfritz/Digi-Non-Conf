@@ -10,8 +10,8 @@
   <string name="speakersLabel">Participating</string>
   <string name="biographyLabel">Biography</string>
   <string name="tweetsLabel">Twitter Feed</string>
-	
-	<string name="working">Gathering data in digital rain barrels...</string>
+
+	<string name="working">GATHERING DATA FROM THE CLOUD...</string>
 	<string name="email">E-Mail</string>
 	<string name="password">Password</string>
 	<string name="authenticating">Authenticating...</string>
@@ -35,11 +35,11 @@
 	<string name="networkErrTitle">Network Access Required</string>
 	<string name="networkErrMsg">It looks like your device is not connected to the internet. Please check your network settings and try again.</string>
 	<string name="networkGenericErrorTitle">Network Error</string>
-	
+
 	<string name="venueCaps">VENUE</string>
 	<string name="thirdFloor">3RD FLOOR</string>
 	<string name="fourthFloor">4TH FLOOR</string>
-	
+
 	<string name="agendaCaps">AGENDA</string>
 	<string name="day1">Day 1</string>
 	<string name="day2">Day 2</string>
@@ -47,6 +47,19 @@
 	<string name="agendaNetworkError">We were unable to retrieve session data at this time.  Please check your network connection and then press the refresh button to try again.</string>
 	<string name="tweetsNetworkError">We were unable to retrieve twitter data at this time.  Please check your network connection and then press the refresh button to try again.</string>
 	
-	<string name="featuredSponsors">FEATURED SPONSORS</string>
-	<string name="sponsorHeader">SPECIAL THANKS TO OUR SPONSORS!</string>
+	<string name="aboutHeader">THIS APP WAS CREATED BY :</string>
+	<string name="development">Centogram specializes in content-managed mobile apps where we pride ourselves in delivering thoughtful strategy and design to all screens - atop desks and in hands.  We deliver solutions to Fortune 500 companies across the nation, and we work hard to exceed their very high expectations of us.</string>
+  <string name="design">Mike Zitt Inc creates brand experiences that grow businesses. We are focused on making complex messages simple, with a passion and proven understanding of the mobile landscape. We can start from the beginning of a project or anywhere in the development cycle to deliver with excellence.</string>
+  <string name="technologyApp">This application was built with Appcelerator, the number one platform for cloud service-enabled mobile applications. Application logic was developed using Alloy, a component-oriented client side MVC framework for Titanium that provides declarative markup for native UI, separation of concerns, and a predictable project structure for Titanium applications.</string>
+  <string name="technologyBack">The back end for this app is implemented using Drupal which enables a feature-rich back end to manage the content.</string>
+
+  <string name="sourceLabel">OPEN SOURCE</string>
+  <string name="source">This application is open source under the Apache 2.0 License, and is available for download at http://bit.ly/dnc-src</string>
+  
+  
+  <string name="favoritesHelp">You can create your personal Schedule by clicking on the star icon in the Schedule Tab next to each session you wish to attend. The star will turn blue and a link to the Session will be created here for your personal schedule. That's it!. 
+    </string>
+  
+  
+  
 </resources>

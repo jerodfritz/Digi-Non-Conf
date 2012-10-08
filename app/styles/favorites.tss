@@ -47,4 +47,15 @@
   right:'10dp',
   bottom:'10dp',
   separatorColor: 'transparent'
+},
+
+
+'#favoritesHelp': {
+  left:'10dp',
+  right:'10dp',
+  color:'#fff',
+  font: {
+    fontSize:'13dp',
+    fontWeight:'normal',
+  }
 }

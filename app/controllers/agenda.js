@@ -1,5 +1,5 @@
 $.on('focus',function(){
-  Ti.App.fireEvent('analytics:trackPageview', {url: 'Schedule / Home'});  
+  Ti.App.fireEvent('analytics:trackPageview', {url: ' Schedule / Home'});  
 });
 
 var moment = require('moment'),
@@ -151,11 +151,11 @@ function loadData(forceRemoteRefresh) {
 loadData(false);
 
 Ti.App.addEventListener('favorites:change', function(e) {
-  Ti.API.debug(e);
+  //Ti.API.debug(e);
   //loadData(false);
 });
 Ti.App.addEventListener('favoritesTab:change', function(e) {
-  Ti.API.debug(e);
+  //Ti.API.debug(e);
   loadData(false);
 });
 
