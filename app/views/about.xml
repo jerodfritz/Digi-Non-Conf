@@ -5,6 +5,10 @@
     <View id="content" class="appContent">
       <View id="innerContent">
         <ScrollView id="scroller" scrollType="vertical" layout="vertical">
+          
+          <View id="imgContainer"><ImageView id="aaf"/></View>
+          <Label textid="organization" class="paragraph"/>
+          
           <View id="imgContainer"><ImageView id="centogram"/></View>
           <Label textid="development" class="paragraph"/>
           

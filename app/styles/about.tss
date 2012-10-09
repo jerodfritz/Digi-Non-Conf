@@ -33,6 +33,12 @@
   height:Ti.UI.SIZE
 },
 
+'#aaf': {
+  image:'/img/about/about-aaf-logo.png',
+  height:'60dp',
+  width:'158dp'
+},
+
 '#centogram': {
   image:'/img/about/about-centogram-logo.png',
   height:'32dp',

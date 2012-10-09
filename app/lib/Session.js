@@ -28,7 +28,8 @@ Session.getAll = function(callback,forceRemoteRefresh) {
         try {
           callback(response);
         } catch (ex) {
-          alert(ex);
+          //alert(ex);
+          Ti.API.debug(ex);
         }
       } else {
         callback("Unkown Error Occurred");

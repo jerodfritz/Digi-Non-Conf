@@ -17,6 +17,8 @@ var _ = require('alloy/underscore'),
 
 if(OS_IOS){
   var ds = require('com.infinery.ds'); 
+} else {
+  var ds = {Shadow : function() {} };
 }
   
 var color_generic = '#4381b3';
@@ -495,7 +497,9 @@ var simpleText = function(text, options) {
       fontWeight : 'normal'
     }
   }, options || {}));
-  ds.Shadow(l, shadow);
+  if(OS_IOS){
+    ds.Shadow(l, shadow);
+  }
   return l;
 }
 exports.simpleText = simpleText;
