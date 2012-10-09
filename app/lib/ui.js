@@ -436,9 +436,9 @@ function StarContainer(options){
   
   // TODO :  All this of showStar stuff is a complete hack job to get this row style to work in multiple places after UI changed 
   if(showStar){
-    var textContainer = Ti.UI.createView({left:'90dp',right:'25dp'});  
+    var textContainer = Ti.UI.createView({left:'87dp',right:'25dp'});  
     var l1 = simpleText(line1,{top : '8dp'});
-    var l2 = simpleText(line2, {size : '14dp'});
+    var l2 = simpleText(line2, {size : '13dp'});
     var l3 = simpleText(line3, {bottom : '8dp'});
     textContainer.add(l1);
     textContainer.add(l2);
