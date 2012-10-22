@@ -1,29 +1,19 @@
-$.on('focus',function(){
-  Ti.App.fireEvent('analytics:trackPageview', {url: ' Schedule / Home'});  
+  
+$.on('focus', function() {
+  Ti.App.fireEvent('analytics:trackPageview', {
+    url : ' Schedule / Home'
+  });
 });
 
-var moment = require('moment'),
-	ui = require('ui'),
-	Session = require('Session');
+var moment = require('moment'), ui = require('ui'), Session = require('Session');
 
-$.on('refresh',function(e){
+$.on('refresh', function(e) {
   Ti.API.info("Agenda Refresh");
   loadData(true);
 })
-
-
 //Session table view data and conference dates
-var day1all = [],
-  day1social = [],
-  day1data = [],
-  day1tech = [],
-	day2all = [],
-	day2social = [],
-	day2data = [],
-	day2tech = [],
-	day1Date = moment('Oct 23, 2012'),
-	day2Date = moment('Oct 24, 2012');
-	
+var day1all = [], day1social = [], day1data = [], day1tech = [], day2all = [], day2social = [], day2data = [], day2tech = [], day1Date = moment('Oct 23, 2012'), day2Date = moment('Oct 24, 2012');
+
 $.loading = Alloy.createController('loading');
 
 //Create handheld UI and controls
@@ -48,12 +38,11 @@ $.daySelector.on('change', function(e) {
 $.filters.on('change', function(e) {
   setTableData($.daySelector.selection, $.filters.selection);
 })
-
-
-function setTableData(day,section){
-  switch(day){
+function setTableData(day, section) {
+  Ti.API.info("setTableData : Begin")
+  switch(day) {
     case 'day1':
-      switch(section){
+      switch(section) {
         case 'all':
           $.agendaTable.setData(day1all);
           break;
@@ -69,7 +58,7 @@ function setTableData(day,section){
       }
       break;
     case 'day2':
-      switch(section){
+      switch(section) {
         case 'all':
           $.agendaTable.setData(day2all);
           break;
@@ -85,12 +74,12 @@ function setTableData(day,section){
       }
       break;
   }
+  Ti.API.info("setTableData : End")
 }
-
 
 //Load agenda data
 function loadData(forceRemoteRefresh) {
-  
+  Ti.API.info("LoadData : Begin")
   $.index.add($.loading.getView());
   day1all = [];
   day1social = [];
@@ -100,13 +89,14 @@ function loadData(forceRemoteRefresh) {
   day2social = [];
   day2data = [];
   day2tech = [];
+
   
   Session.getAll(function(e) {
     $.index.remove($.loading.getView());
     if (e.success) {
       var sessions = e.sessions;
       for (var i = 0, l = sessions.length; i < l; i++) {
-        var session = sessions[i], sessionStart = moment(session.time.value + ' +0000',"YYYY-MM-DD HH:mm:ss Z"), row = new ui.AgendaRow(session);
+        var session = sessions[i], sessionStart = moment(session.time.value + ' +0000', "YYYY-MM-DD HH:mm:ss Z"), row = new ui.AgendaRow(session);
         if (sessionStart.diff(day2Date) < 0) {
           day1all.push(row);
           switch(session.Track[0]) {
@@ -139,21 +129,19 @@ function loadData(forceRemoteRefresh) {
           }
         }
       }
-      setTableData($.daySelector.selection,$.filters.selection);
+      setTableData($.daySelector.selection, $.filters.selection);
     } else {
       Ti.API.error('Error fetching session data: ' + e);
       ui.alert('networkGenericErrorTitle', 'agendaNetworkError');
     }
-  },forceRemoteRefresh);
+  }, forceRemoteRefresh);
+
+  Ti.API.info("LoadData : End")
 }
 
-// Load Initial Data
+
 loadData(false);
 
-Ti.App.addEventListener('favorites:change', function(e) {
-  //Ti.API.debug(e);
-  //loadData(false);
-});
 Ti.App.addEventListener('favoritesTab:change', function(e) {
   //Ti.API.debug(e);
   loadData(false);

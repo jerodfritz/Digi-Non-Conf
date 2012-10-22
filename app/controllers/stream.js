@@ -15,6 +15,7 @@ tweets.getTweets(screename, function(e) {
     tweetsContainer = e.tweets;
     $.tweets.add(tweetsContainer);
   } else {
+    Ti.API.info("Tweet Error" + JSON.stringify(e));
     ui.alert('networkGenericErrorTitle', 'tweetsNetworkError');
   }
 });

@@ -4,6 +4,10 @@ var Http = require('Http').Http;
 var REST_PATH = 'http://digital-non-conference.boucher.centogram.com/api/rest/';
 var SITE_PATH = 'http://digital-non-conference.boucher.centogram.com/';
 
+//var REST_PATH = 'http://digiconf/api/rest/';
+//var SITE_PATH = 'http://digiconf/';
+
+
 var formatDrupalUser = function(user){
   var username = user.username || '';
   var password = user.password || '';

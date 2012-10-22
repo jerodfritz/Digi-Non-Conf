@@ -70,7 +70,6 @@
 },
 
 '#speakersView': {
-  backgroundColor: '#ff0000',
   height: Ti.UI.SIZE,
   layout: 'vertical'
 },

@@ -15,12 +15,16 @@ var _ = require('alloy/underscore'),
     shadowOffset: {x: '1dp', y: '1dp'}
   };
 
-if(OS_IOS){
-  var ds = require('com.infinery.ds'); 
-} else {
-  var ds = {Shadow : function() {} };
+var ds = {
+  Shadow : function(obj, options) {
+    Ti.API.info("Fake Shadow Handler Called")
+  }
+};
+
+if (OS_IOS) {
+  ds = require('com.infinery.ds');
 }
-  
+ 
 var color_generic = '#4381b3';
 var color_social = '#c63838';
 var color_data = '#d6de42';
@@ -105,6 +109,7 @@ exports.FauxShadow = FauxShadow;
 exports.HeaderView = function(options) {
 	var self = Ti.UI.createView(_.extend({
 		backgroundColor:'#6a6c6c',
+		backgroundImage: '/img/general/#6a6c6c.png',
 		height:'29dp'
 	}, options.viewArgs || {}));
 	
@@ -114,7 +119,7 @@ exports.HeaderView = function(options) {
 	var indicator = Ti.UI.createView({
 		top:0,
 		right:(options.optionWidth*(options.options.length-1))+'dp',
-		bottom:'1dp',
+		//bottom:'1dp',
 		width:options.optionWidth+'dp',
 		backgroundColor:'#585c5c'
 	});
@@ -214,6 +219,7 @@ exports.HeaderView = function(options) {
     
 		//option selection
 		v.addEventListener('click', function(e) {
+			if(OS_IOS){
 			indicator.animate({
 				right:rightOffset,
 				width:v.width,
@@ -224,6 +230,14 @@ exports.HeaderView = function(options) {
 					selection:t
 				});
 			});
+			} else {
+			  indicator.right = rightOffset;
+			  indicator.width = v.width; 
+			  self.selection = t;
+        self.fireEvent('change',{
+          selection:t
+        });
+			}
 		});
 		
 		return v;
@@ -245,8 +259,15 @@ exports.HeaderView = function(options) {
 
 //Helper to dynamically generate a session table view row
 function AgendaRow(session) {
-	
-	var nid = session.nid;
+  var row = Ti.UI.createTableViewRow({
+    height:'65dp',
+    backgroundSelectedColor:'transparent',
+    //className:'starRow',
+    layout : 'vertical',
+  });
+  
+  
+  var nid = session.nid;
 
   var track = false;
   var color = color_generic;
@@ -273,7 +294,7 @@ function AgendaRow(session) {
   
   var openDetails = true;
   var type = false;
-  var iconImage = false;
+  var iconImage = '/img/general/generic_icon.png';
   //Ti.API.info("Type : " + session.Type[0]);
   switch(session.Type[0]){
     case 'Break':
@@ -326,14 +347,6 @@ function AgendaRow(session) {
   session.period = start.format('h:mma') + ' - ' + end.format('h:mma');
   session.isFavorite = Favorites.is(nid);
 	
-	var row = Ti.UI.createTableViewRow({
-    height:'65dp',
-    selectedBackgroundColor:'transparent',
-    className:'starRow',
-    layout : 'vertical',
-    //hasChild : openDetails,
-    //backgroundImage: '/img/general/bg-agenda-row.png',
-  });
   
   var rowContainer = StarContainer({
     nid : nid,
@@ -348,6 +361,7 @@ function AgendaRow(session) {
     hasChild : openDetails,
     showStar : true
   });
+  
   row.add(rowContainer);
   row.isFavorite = session.isFavorite;
   row.container = rowContainer;
@@ -371,13 +385,12 @@ function StarContainer(options){
     hasChild = options.hasChild,
     showStar = options.showStar;
   
-  var theHeight = '65dp';
- 
+  
   var container = Ti.UI.createView({
     backgroundImage: '/img/general/bg-agenda-row.png',
     backgroundRepeat : true,
     width: Ti.UI.FILL,
-    height:theHeight,
+    height:'65dp',
     top:0,
     left:0
   });
@@ -404,6 +417,7 @@ function StarContainer(options){
       container.fireEvent('starToggle');  
     })
   }
+  
   var iconBackground = Ti.UI.createView({
     backgroundColor:color,
     backgroundImage: '/img/general/' + color + '.png',
@@ -456,15 +470,14 @@ function StarContainer(options){
   }
   
   
-  
   if(_rowCallback){
     textContainer.addEventListener('click',_rowCallback)
   }
   
+  
   if(hasChild){
-    var arrow = '/img/general/btn-right-arrow.png';
     var hasChildArrow = Ti.UI.createImageView({
-      image : arrow,
+      image : '/img/general/btn-right-arrow.png',
       width: '11dp',
       height: '12dp',
       right: '10dp',
@@ -485,18 +498,22 @@ var simpleText = function(text, options) {
   if (options) {
     size = options.size || size;
   }
-  var l = Ti.UI.createLabel(_.extend({
+
+ var l = Ti.UI.createLabel({
+    top : options.top,
+    bottom : options.bottom,
     text : text,
     color : '#fff',
-    //ellipsize:true,
-    //wordWrap:false,
+    ellipsize:true,
+    wordWrap:false,
     left : 0,
     minimumFontSize : size,
     font : {
       fontSize : size,
       fontWeight : 'normal'
     }
-  }, options || {}));
+  });
+  
   if(OS_IOS){
     ds.Shadow(l, shadow);
   }
@@ -568,6 +585,8 @@ function contains(a, obj) {
 }
 
 function starCallback(e) {
+  Ti.API.debug(e);
+  Ti.API.debug(e.source.star);
   var on = Favorites.toggle(e.source.nid);
   e.source.star.image = on ? e.source.star.starOn : e.source.star.starOff;
   Ti.API.info("Star toggle " + e.source.nid + " to " + on);

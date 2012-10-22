@@ -33,6 +33,9 @@ timePlace.addEventListener('click',function(){
     contextData: session.loc
   });
 })
+
+timePlace.width = Ti.UI.SIZE;
+
 $.timePlaceTable.add(timePlace);
 
 
