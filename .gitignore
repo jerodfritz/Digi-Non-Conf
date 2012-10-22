@@ -7,3 +7,5 @@ build.log
 .fastdev.lock
 tiapp.xml
 Resources
+AndroidKeystore
+

@@ -42,7 +42,7 @@ exports.getTweets = function(screename,_cb,limit,style){
           var now = moment();
           var created = moment(tweet.created_at)
           var ago = created.from(now);
-          if (OS_IOS && false) {
+          if (OS_IOS) {
             var image = '<img src="' + tweet.user.profile_image_url + '" class="avatar" />';
             var message =image 
               + '<div class="tweet">' 
@@ -59,12 +59,12 @@ exports.getTweets = function(screename,_cb,limit,style){
             var post_view = Ti.UI.createView({
               backgroundColor: '#303536',
               width: Ti.UI.FILL,
-              height: '65dp',
+              height: '70dp',
               left : '0dp',
               top : '0dp',
               bottom : '0dp',
               right : '0dp',
-              layout : 'horizontal',
+              layout : 'absolute'
             });
 
 
@@ -80,11 +80,13 @@ exports.getTweets = function(screename,_cb,limit,style){
             post_view.add(av);
 
             var tweet_text = Ti.UI.createLabel({
-              text : tweet.text,
-              top : '7dp',
-              left : '10dp',
+              text : tweet.text.replace(/^\s\s*/, '').replace(/\s\s*$/, ''),
+              top : '0dp',
+              bottom : '0dp',
+              left : '70dp',
               right : '5dp',
               textAlign : 'left',
+              ellipsize:true,
               color : '#fff',
               font : {
                 fontSize : '13dp'
@@ -103,7 +105,7 @@ exports.getTweets = function(screename,_cb,limit,style){
         }
         html += endCSS;
         
-        if (OS_IOS && false) {
+        if (OS_IOS) {
           var StyledLabel = require('ti.styledlabel');
           var label = StyledLabel.createLabel({
             height : Ti.UI.SIZE || 'auto',

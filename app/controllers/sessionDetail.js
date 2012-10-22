@@ -13,7 +13,11 @@ ui.shadow($.descriptionLabel);
 ui.shadow($.timePlaceLabel);
 
 Ti.App.fireEvent('analytics:trackPageview', {url: ' Session / ' + session.node_title});  
-
+var row = Ti.UI.createTableViewRow({
+    height:'65dp',
+    backgroundSelectedColor:'transparent',
+    layout : 'vertical',
+  });
 var timePlace = ui.StarContainer({
     nid : session.nid,
     isFavorite : session.isFavorite,
@@ -33,10 +37,10 @@ timePlace.addEventListener('click',function(){
     contextData: session.loc
   });
 })
-
-timePlace.width = Ti.UI.SIZE;
-
-$.timePlaceTable.add(timePlace);
+row.add(timePlace);
+var data = [];
+data.push(row);
+$.timePlaceTable.setData(data);
 
 
 
